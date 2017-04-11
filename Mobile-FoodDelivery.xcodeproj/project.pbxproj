@@ -1,0 +1,723 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10775FD1E7D0AA9001A47DB /* circled_chevron_down_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = A10775FB1E7D0AA9001A47DB /* circled_chevron_down_filled.png */; };
+		A10775FE1E7D0AA9001A47DB /* circled_chevron_up_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = A10775FC1E7D0AA9001A47DB /* circled_chevron_up_filled.png */; };
+		A10776001E7D136B001A47DB /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10775FF1E7D136B001A47DB /* HamburgerViewController.swift */; };
+		A10776021E7D142E001A47DB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10776011E7D142E001A47DB /* BaseViewController.swift */; };
+		A10776051E7D9A35001A47DB /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10776041E7D9A35001A47DB /* GlobalVariables.swift */; };
+		A10776071E7DA8E0001A47DB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10776061E7DA8E0001A47DB /* Alamofire.framework */; };
+		A11385901E87DF4700F64D74 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A113858C1E87DF4700F64D74 /* HeaderView.swift */; };
+		A11385911E87DF4700F64D74 /* UIExpandableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A113858D1E87DF4700F64D74 /* UIExpandableTableView.swift */; };
+		A11385921E87DF4700F64D74 /* TitleOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A113858E1E87DF4700F64D74 /* TitleOrderTableViewCell.swift */; };
+		A11385931E87DF4700F64D74 /* SummaryOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A113858F1E87DF4700F64D74 /* SummaryOrderTableViewCell.swift */; };
+		A114B4481E58AAE9001C3947 /* MerchantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114B4461E58AAE9001C3947 /* MerchantTableViewCell.swift */; };
+		A114B44C1E58B960001C3947 /* Diselect.png in Resources */ = {isa = PBXBuildFile; fileRef = A114B44A1E58B960001C3947 /* Diselect.png */; };
+		A114B44D1E58B960001C3947 /* Select.png in Resources */ = {isa = PBXBuildFile; fileRef = A114B44B1E58B960001C3947 /* Select.png */; };
+		A114B44F1E58B980001C3947 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114B44E1E58B980001C3947 /* MenuTableViewCell.swift */; };
+		A114B4511E58BC22001C3947 /* MenuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114B4501E58BC22001C3947 /* MenuListViewController.swift */; };
+		A114B4531E58C10A001C3947 /* OCHAYA.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A114B4521E58C10A001C3947 /* OCHAYA.jpg */; };
+		A114B45A1E59BDD8001C3947 /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114B4591E59BDD8001C3947 /* MenuDetailViewController.swift */; };
+		A114B45D1E59D619001C3947 /* checked_2_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = A114B45B1E59D619001C3947 /* checked_2_filled.png */; };
+		A114B45E1E59D619001C3947 /* unchecked_checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = A114B45C1E59D619001C3947 /* unchecked_checkbox.png */; };
+		A114B4601E59F511001C3947 /* menu_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = A114B45F1E59F511001C3947 /* menu_filled.png */; };
+		A114B4621E5A01C3001C3947 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = A114B4611E5A01C3001C3947 /* plus.png */; };
+		A114B4641E5A054E001C3947 /* MenuDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114B4631E5A054E001C3947 /* MenuDetailTableViewCell.swift */; };
+		A114B4661E5A0E42001C3947 /* OptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A114B4651E5A0E42001C3947 /* OptionTableViewCell.swift */; };
+		A115ADB61E7E378500F76DC3 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A115ADB51E7E378500F76DC3 /* BasketViewController.swift */; };
+		A115ADB81E7E3A6000F76DC3 /* ConfirmOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A115ADB71E7E3A6000F76DC3 /* ConfirmOrderViewController.swift */; };
+		A115ADBA1E7EEA8900F76DC3 /* OrderStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A115ADB91E7EEA8900F76DC3 /* OrderStatusViewController.swift */; };
+		A1375ED91E54C40E0011C529 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = A1375ED81E54C40E0011C529 /* menu.png */; };
+		A1375EDB1E54C4560011C529 /* ingredients_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = A1375EDA1E54C4560011C529 /* ingredients_filled.png */; };
+		A1375EDD1E54C4DA0011C529 /* location_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = A1375EDC1E54C4DA0011C529 /* location_filled.png */; };
+		A1677F051E4EB53000B0B778 /* UICustomize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1677F041E4EB53000B0B778 /* UICustomize.swift */; };
+		A1677F071E4EB5D900B0B778 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1677F061E4EB5D900B0B778 /* Constants.swift */; };
+		A1677F091E4EC22500B0B778 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1677F081E4EC22500B0B778 /* HomeViewController.swift */; };
+		A1677F0B1E4EC47B00B0B778 /* MapPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1677F0A1E4EC47B00B0B778 /* MapPinViewController.swift */; };
+		A171848E1E99E6FB00B0F9CB /* exterior_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = A17184861E99E6FB00B0F9CB /* exterior_filled.png */; };
+		A171848F1E99E6FB00B0F9CB /* exterior.png in Resources */ = {isa = PBXBuildFile; fileRef = A17184871E99E6FB00B0F9CB /* exterior.png */; };
+		A17184901E99E6FB00B0F9CB /* motorcycle_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = A17184881E99E6FB00B0F9CB /* motorcycle_filled.png */; };
+		A17184911E99E6FB00B0F9CB /* motorcycle.png in Resources */ = {isa = PBXBuildFile; fileRef = A17184891E99E6FB00B0F9CB /* motorcycle.png */; };
+		A17184921E99E6FB00B0F9CB /* phone_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = A171848A1E99E6FB00B0F9CB /* phone_filled.png */; };
+		A17184931E99E6FB00B0F9CB /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = A171848B1E99E6FB00B0F9CB /* phone.png */; };
+		A17184941E99E6FB00B0F9CB /* restaurant_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = A171848C1E99E6FB00B0F9CB /* restaurant_filled.png */; };
+		A17184951E99E6FB00B0F9CB /* restaurant.png in Resources */ = {isa = PBXBuildFile; fileRef = A171848D1E99E6FB00B0F9CB /* restaurant.png */; };
+		A17184971E9A37AD00B0F9CB /* CurrentOrderStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17184961E9A37AD00B0F9CB /* CurrentOrderStatusViewController.swift */; };
+		A17184991E9A4BE800B0F9CB /* attention.png in Resources */ = {isa = PBXBuildFile; fileRef = A17184981E9A4BE800B0F9CB /* attention.png */; };
+		A171849C1E9A567F00B0F9CB /* active_state_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = A171849A1E9A567F00B0F9CB /* active_state_filled.png */; };
+		A171849D1E9A567F00B0F9CB /* checked_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = A171849B1E9A567F00B0F9CB /* checked_filled.png */; };
+		A17E89DC1E89161C002E5CA0 /* image-not-found.png in Resources */ = {isa = PBXBuildFile; fileRef = A17E89DB1E89161C002E5CA0 /* image-not-found.png */; };
+		A17E89DE1E8916A6002E5CA0 /* image-not-found-wide.png in Resources */ = {isa = PBXBuildFile; fileRef = A17E89DD1E8916A6002E5CA0 /* image-not-found-wide.png */; };
+		A18BD83B1E9B4DDB000C5D59 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18BD83A1E9B4DDB000C5D59 /* Customer.swift */; };
+		A18BD83D1E9B5D99000C5D59 /* HistoryOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18BD83C1E9B5D99000C5D59 /* HistoryOrderViewController.swift */; };
+		A18BD83F1E9B63DD000C5D59 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18BD83E1E9B63DD000C5D59 /* HistoryCell.swift */; };
+		A18BD8411E9B648E000C5D59 /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18BD8401E9B648E000C5D59 /* HistoryDetailViewController.swift */; };
+		A18BD8431E9B6AF2000C5D59 /* more_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = A18BD8421E9B6AF2000C5D59 /* more_filled.png */; };
+		A1AE43711E880FAE0076B5D5 /* Basket.json in Resources */ = {isa = PBXBuildFile; fileRef = A1AE43701E880F300076B5D5 /* Basket.json */; };
+		A1B5F8BB1E3DDDC40023E4B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B5F8BA1E3DDDC40023E4B7 /* AppDelegate.swift */; };
+		A1B5F8BD1E3DDDC40023E4B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B5F8BC1E3DDDC40023E4B7 /* ViewController.swift */; };
+		A1B5F8C01E3DDDC40023E4B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B5F8BE1E3DDDC40023E4B7 /* Main.storyboard */; };
+		A1B5F8C31E3DDDC40023E4B7 /* Mobile_FoodDelivery.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1B5F8C11E3DDDC40023E4B7 /* Mobile_FoodDelivery.xcdatamodeld */; };
+		A1B5F8C51E3DDDC40023E4B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B5F8C41E3DDDC40023E4B7 /* Assets.xcassets */; };
+		A1B5F8C81E3DDDC40023E4B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B5F8C61E3DDDC40023E4B7 /* LaunchScreen.storyboard */; };
+		A1D6C5581E9A8E7900CB73F4 /* HeaderFooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D6C5571E9A8E7900CB73F4 /* HeaderFooterCell.swift */; };
+		A1D6C55A1E9A980F00CB73F4 /* HeaderFooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D6C5591E9A980F00CB73F4 /* HeaderFooterCell.xib */; };
+		A1D6C55C1E9AA0B600CB73F4 /* multiply_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = A1D6C55B1E9AA0B600CB73F4 /* multiply_filled.png */; };
+		A1EB19521E88116C00ECDB0D /* Merchant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EB19511E88116C00ECDB0D /* Merchant.swift */; };
+		A1EB19551E88118F00ECDB0D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EB19541E88118F00ECDB0D /* Menu.swift */; };
+		A1EB19571E881A9200ECDB0D /* BasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EB19561E881A9200ECDB0D /* BasketTableViewCell.swift */; };
+		A1F0BCB91E92234900A8C3DC /* user_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F0BCB81E92234900A8C3DC /* user_filled.png */; };
+		A1F3226F1E87EBAD00108CD0 /* Order.json in Resources */ = {isa = PBXBuildFile; fileRef = A1139F471E87E605008AAC0D /* Order.json */; };
+		E0AC16A12F67602FD12DECC7 /* Pods_Mobile_FoodDelivery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 680697286C9FD241F6D766B2 /* Pods_Mobile_FoodDelivery.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2E9488FE1C453AC33519060F /* Pods-Mobile-FoodDelivery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile-FoodDelivery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mobile-FoodDelivery/Pods-Mobile-FoodDelivery.debug.xcconfig"; sourceTree = "<group>"; };
+		680697286C9FD241F6D766B2 /* Pods_Mobile_FoodDelivery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobile_FoodDelivery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10775FB1E7D0AA9001A47DB /* circled_chevron_down_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circled_chevron_down_filled.png; sourceTree = "<group>"; };
+		A10775FC1E7D0AA9001A47DB /* circled_chevron_up_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circled_chevron_up_filled.png; sourceTree = "<group>"; };
+		A10775FF1E7D136B001A47DB /* HamburgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
+		A10776011E7D142E001A47DB /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A10776041E7D9A35001A47DB /* GlobalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		A10776061E7DA8E0001A47DB /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
+		A10E9F711E7CEB13006A85DA /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Mobile-FoodDelivery-akqlzjhpuodkjtbdrhcigcxwbdyv/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		A113858C1E87DF4700F64D74 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		A113858D1E87DF4700F64D74 /* UIExpandableTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIExpandableTableView.swift; sourceTree = "<group>"; };
+		A113858E1E87DF4700F64D74 /* TitleOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleOrderTableViewCell.swift; sourceTree = "<group>"; };
+		A113858F1E87DF4700F64D74 /* SummaryOrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryOrderTableViewCell.swift; sourceTree = "<group>"; };
+		A1139F471E87E605008AAC0D /* Order.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Order.json; sourceTree = "<group>"; };
+		A114B4461E58AAE9001C3947 /* MerchantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MerchantTableViewCell.swift; path = UICustom/Cell/MerchantTableViewCell.swift; sourceTree = "<group>"; };
+		A114B44A1E58B960001C3947 /* Diselect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Diselect.png; sourceTree = "<group>"; };
+		A114B44B1E58B960001C3947 /* Select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Select.png; sourceTree = "<group>"; };
+		A114B44E1E58B980001C3947 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		A114B4501E58BC22001C3947 /* MenuListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuListViewController.swift; sourceTree = "<group>"; };
+		A114B4521E58C10A001C3947 /* OCHAYA.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = OCHAYA.jpg; sourceTree = "<group>"; };
+		A114B4591E59BDD8001C3947 /* MenuDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
+		A114B45B1E59D619001C3947 /* checked_2_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked_2_filled.png; sourceTree = "<group>"; };
+		A114B45C1E59D619001C3947 /* unchecked_checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked_checkbox.png; sourceTree = "<group>"; };
+		A114B45F1E59F511001C3947 /* menu_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_filled.png; sourceTree = "<group>"; };
+		A114B4611E5A01C3001C3947 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		A114B4631E5A054E001C3947 /* MenuDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDetailTableViewCell.swift; sourceTree = "<group>"; };
+		A114B4651E5A0E42001C3947 /* OptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionTableViewCell.swift; sourceTree = "<group>"; };
+		A115ADB51E7E378500F76DC3 /* BasketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		A115ADB71E7E3A6000F76DC3 /* ConfirmOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmOrderViewController.swift; sourceTree = "<group>"; };
+		A115ADB91E7EEA8900F76DC3 /* OrderStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderStatusViewController.swift; sourceTree = "<group>"; };
+		A1375ED81E54C40E0011C529 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		A1375EDA1E54C4560011C529 /* ingredients_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ingredients_filled.png; sourceTree = "<group>"; };
+		A1375EDC1E54C4DA0011C529 /* location_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_filled.png; sourceTree = "<group>"; };
+		A1677F041E4EB53000B0B778 /* UICustomize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICustomize.swift; sourceTree = "<group>"; };
+		A1677F061E4EB5D900B0B778 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A1677F081E4EC22500B0B778 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A1677F0A1E4EC47B00B0B778 /* MapPinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPinViewController.swift; sourceTree = "<group>"; };
+		A17184861E99E6FB00B0F9CB /* exterior_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exterior_filled.png; sourceTree = "<group>"; };
+		A17184871E99E6FB00B0F9CB /* exterior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exterior.png; sourceTree = "<group>"; };
+		A17184881E99E6FB00B0F9CB /* motorcycle_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = motorcycle_filled.png; sourceTree = "<group>"; };
+		A17184891E99E6FB00B0F9CB /* motorcycle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = motorcycle.png; sourceTree = "<group>"; };
+		A171848A1E99E6FB00B0F9CB /* phone_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_filled.png; sourceTree = "<group>"; };
+		A171848B1E99E6FB00B0F9CB /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone.png; sourceTree = "<group>"; };
+		A171848C1E99E6FB00B0F9CB /* restaurant_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restaurant_filled.png; sourceTree = "<group>"; };
+		A171848D1E99E6FB00B0F9CB /* restaurant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = restaurant.png; sourceTree = "<group>"; };
+		A17184961E9A37AD00B0F9CB /* CurrentOrderStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentOrderStatusViewController.swift; sourceTree = "<group>"; };
+		A17184981E9A4BE800B0F9CB /* attention.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attention.png; sourceTree = "<group>"; };
+		A171849A1E9A567F00B0F9CB /* active_state_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_state_filled.png; sourceTree = "<group>"; };
+		A171849B1E9A567F00B0F9CB /* checked_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked_filled.png; sourceTree = "<group>"; };
+		A17E89DB1E89161C002E5CA0 /* image-not-found.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image-not-found.png"; sourceTree = "<group>"; };
+		A17E89DD1E8916A6002E5CA0 /* image-not-found-wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "image-not-found-wide.png"; sourceTree = "<group>"; };
+		A18BD83A1E9B4DDB000C5D59 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		A18BD83C1E9B5D99000C5D59 /* HistoryOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryOrderViewController.swift; sourceTree = "<group>"; };
+		A18BD83E1E9B63DD000C5D59 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		A18BD8401E9B648E000C5D59 /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
+		A18BD8421E9B6AF2000C5D59 /* more_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more_filled.png; sourceTree = "<group>"; };
+		A1AE43701E880F300076B5D5 /* Basket.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Basket.json; sourceTree = "<group>"; };
+		A1B5F8B71E3DDDC40023E4B7 /* Mobile-FoodDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile-FoodDelivery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B5F8BA1E3DDDC40023E4B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A1B5F8BC1E3DDDC40023E4B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A1B5F8BF1E3DDDC40023E4B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A1B5F8C21E3DDDC40023E4B7 /* Mobile_FoodDelivery.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mobile_FoodDelivery.xcdatamodel; sourceTree = "<group>"; };
+		A1B5F8C41E3DDDC40023E4B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1B5F8C71E3DDDC40023E4B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A1B5F8C91E3DDDC40023E4B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1B5F8D31E3DE7450023E4B7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Release-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		A1D6C5571E9A8E7900CB73F4 /* HeaderFooterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderFooterCell.swift; sourceTree = "<group>"; };
+		A1D6C5591E9A980F00CB73F4 /* HeaderFooterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderFooterCell.xib; sourceTree = "<group>"; };
+		A1D6C55B1E9AA0B600CB73F4 /* multiply_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = multiply_filled.png; sourceTree = "<group>"; };
+		A1EB19511E88116C00ECDB0D /* Merchant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Merchant.swift; sourceTree = "<group>"; };
+		A1EB19541E88118F00ECDB0D /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		A1EB19561E881A9200ECDB0D /* BasketTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasketTableViewCell.swift; sourceTree = "<group>"; };
+		A1F0BCB81E92234900A8C3DC /* user_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_filled.png; sourceTree = "<group>"; };
+		FB401EB5306A1E73CD606765 /* Pods-Mobile-FoodDelivery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile-FoodDelivery.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mobile-FoodDelivery/Pods-Mobile-FoodDelivery.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1B5F8B41E3DDDC40023E4B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A10776071E7DA8E0001A47DB /* Alamofire.framework in Frameworks */,
+				E0AC16A12F67602FD12DECC7 /* Pods_Mobile_FoodDelivery.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6B7EF856AF46FE981B45D250 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2E9488FE1C453AC33519060F /* Pods-Mobile-FoodDelivery.debug.xcconfig */,
+				FB401EB5306A1E73CD606765 /* Pods-Mobile-FoodDelivery.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8369A737CEDC1F3E77150481 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A10776061E7DA8E0001A47DB /* Alamofire.framework */,
+				A10E9F711E7CEB13006A85DA /* Alamofire.framework */,
+				A1B5F8D31E3DE7450023E4B7 /* Alamofire.framework */,
+				680697286C9FD241F6D766B2 /* Pods_Mobile_FoodDelivery.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A10776031E7D192C001A47DB /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				A10775FF1E7D136B001A47DB /* HamburgerViewController.swift */,
+				A10776011E7D142E001A47DB /* BaseViewController.swift */,
+				A18BD83C1E9B5D99000C5D59 /* HistoryOrderViewController.swift */,
+				A17184961E9A37AD00B0F9CB /* CurrentOrderStatusViewController.swift */,
+				A18BD8401E9B648E000C5D59 /* HistoryDetailViewController.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		A114B4451E58AAC5001C3947 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A114B4461E58AAE9001C3947 /* MerchantTableViewCell.swift */,
+				A114B44E1E58B980001C3947 /* MenuTableViewCell.swift */,
+				A114B4631E5A054E001C3947 /* MenuDetailTableViewCell.swift */,
+				A114B4651E5A0E42001C3947 /* OptionTableViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		A114B4581E59BDB8001C3947 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				A113858C1E87DF4700F64D74 /* HeaderView.swift */,
+				A113858D1E87DF4700F64D74 /* UIExpandableTableView.swift */,
+				A113858E1E87DF4700F64D74 /* TitleOrderTableViewCell.swift */,
+				A113858F1E87DF4700F64D74 /* SummaryOrderTableViewCell.swift */,
+				A114B4501E58BC22001C3947 /* MenuListViewController.swift */,
+				A114B4591E59BDD8001C3947 /* MenuDetailViewController.swift */,
+				A115ADB51E7E378500F76DC3 /* BasketViewController.swift */,
+				A115ADB71E7E3A6000F76DC3 /* ConfirmOrderViewController.swift */,
+				A115ADB91E7EEA8900F76DC3 /* OrderStatusViewController.swift */,
+				A1EB19561E881A9200ECDB0D /* BasketTableViewCell.swift */,
+				A1D6C5571E9A8E7900CB73F4 /* HeaderFooterCell.swift */,
+				A1D6C5591E9A980F00CB73F4 /* HeaderFooterCell.xib */,
+				A18BD83E1E9B63DD000C5D59 /* HistoryCell.swift */,
+			);
+			name = Order;
+			sourceTree = "<group>";
+		};
+		A1375ECB1E54C1D50011C529 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				A17AA4CF1E92898D0087C8BF /* order */,
+				A17E89DB1E89161C002E5CA0 /* image-not-found.png */,
+				A10775FB1E7D0AA9001A47DB /* circled_chevron_down_filled.png */,
+				A10775FC1E7D0AA9001A47DB /* circled_chevron_up_filled.png */,
+				A114B4611E5A01C3001C3947 /* plus.png */,
+				A1F0BCB81E92234900A8C3DC /* user_filled.png */,
+				A1375ED81E54C40E0011C529 /* menu.png */,
+				A1375EDC1E54C4DA0011C529 /* location_filled.png */,
+				A1375EDA1E54C4560011C529 /* ingredients_filled.png */,
+				A114B44A1E58B960001C3947 /* Diselect.png */,
+				A114B44B1E58B960001C3947 /* Select.png */,
+				A114B4521E58C10A001C3947 /* OCHAYA.jpg */,
+				A114B45B1E59D619001C3947 /* checked_2_filled.png */,
+				A114B45C1E59D619001C3947 /* unchecked_checkbox.png */,
+				A17E89DD1E8916A6002E5CA0 /* image-not-found-wide.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		A1677F011E4EB4C100B0B778 /* UICustom */ = {
+			isa = PBXGroup;
+			children = (
+				A114B4451E58AAC5001C3947 /* Cell */,
+				A1677F041E4EB53000B0B778 /* UICustomize.swift */,
+			);
+			name = UICustom;
+			sourceTree = "<group>";
+		};
+		A17AA4CF1E92898D0087C8BF /* order */ = {
+			isa = PBXGroup;
+			children = (
+				A18BD8421E9B6AF2000C5D59 /* more_filled.png */,
+				A1D6C55B1E9AA0B600CB73F4 /* multiply_filled.png */,
+				A17184981E9A4BE800B0F9CB /* attention.png */,
+				A171849A1E9A567F00B0F9CB /* active_state_filled.png */,
+				A171849B1E9A567F00B0F9CB /* checked_filled.png */,
+				A17184861E99E6FB00B0F9CB /* exterior_filled.png */,
+				A17184871E99E6FB00B0F9CB /* exterior.png */,
+				A17184881E99E6FB00B0F9CB /* motorcycle_filled.png */,
+				A17184891E99E6FB00B0F9CB /* motorcycle.png */,
+				A171848A1E99E6FB00B0F9CB /* phone_filled.png */,
+				A171848B1E99E6FB00B0F9CB /* phone.png */,
+				A171848C1E99E6FB00B0F9CB /* restaurant_filled.png */,
+				A171848D1E99E6FB00B0F9CB /* restaurant.png */,
+			);
+			name = order;
+			sourceTree = "<group>";
+		};
+		A1B5F8AE1E3DDDC40023E4B7 = {
+			isa = PBXGroup;
+			children = (
+				A1B5F8B91E3DDDC40023E4B7 /* Mobile-FoodDelivery */,
+				A1B5F8B81E3DDDC40023E4B7 /* Products */,
+				6B7EF856AF46FE981B45D250 /* Pods */,
+				8369A737CEDC1F3E77150481 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A1B5F8B81E3DDDC40023E4B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1B5F8B71E3DDDC40023E4B7 /* Mobile-FoodDelivery.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1B5F8B91E3DDDC40023E4B7 /* Mobile-FoodDelivery */ = {
+			isa = PBXGroup;
+			children = (
+				A10776031E7D192C001A47DB /* Menu */,
+				A114B4581E59BDB8001C3947 /* Order */,
+				A1375ECB1E54C1D50011C529 /* images */,
+				A1677F011E4EB4C100B0B778 /* UICustom */,
+				A1677F061E4EB5D900B0B778 /* Constants.swift */,
+				A114B45F1E59F511001C3947 /* menu_filled.png */,
+				A1B5F8BA1E3DDDC40023E4B7 /* AppDelegate.swift */,
+				A1B5F8BC1E3DDDC40023E4B7 /* ViewController.swift */,
+				A1B5F8BE1E3DDDC40023E4B7 /* Main.storyboard */,
+				A1B5F8C41E3DDDC40023E4B7 /* Assets.xcassets */,
+				A1B5F8C61E3DDDC40023E4B7 /* LaunchScreen.storyboard */,
+				A1B5F8C91E3DDDC40023E4B7 /* Info.plist */,
+				A1B5F8C11E3DDDC40023E4B7 /* Mobile_FoodDelivery.xcdatamodeld */,
+				A1677F081E4EC22500B0B778 /* HomeViewController.swift */,
+				A1677F0A1E4EC47B00B0B778 /* MapPinViewController.swift */,
+				A10776041E7D9A35001A47DB /* GlobalVariables.swift */,
+				A1139F471E87E605008AAC0D /* Order.json */,
+				A1AE43701E880F300076B5D5 /* Basket.json */,
+				A1EB19531E88117700ECDB0D /* Model */,
+			);
+			path = "Mobile-FoodDelivery";
+			sourceTree = "<group>";
+		};
+		A1EB19531E88117700ECDB0D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A1EB19511E88116C00ECDB0D /* Merchant.swift */,
+				A1EB19541E88118F00ECDB0D /* Menu.swift */,
+				A18BD83A1E9B4DDB000C5D59 /* Customer.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1B5F8B61E3DDDC40023E4B7 /* Mobile-FoodDelivery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1B5F8CC1E3DDDC40023E4B7 /* Build configuration list for PBXNativeTarget "Mobile-FoodDelivery" */;
+			buildPhases = (
+				55F2F03816ED790A68915AF9 /* [CP] Check Pods Manifest.lock */,
+				A1B5F8B31E3DDDC40023E4B7 /* Sources */,
+				A1B5F8B41E3DDDC40023E4B7 /* Frameworks */,
+				A1B5F8B51E3DDDC40023E4B7 /* Resources */,
+				727AB56A235A2B65505E9D7E /* [CP] Embed Pods Frameworks */,
+				445FCD8AC7C55AA988590776 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mobile-FoodDelivery";
+			productName = "Mobile-FoodDelivery";
+			productReference = A1B5F8B71E3DDDC40023E4B7 /* Mobile-FoodDelivery.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1B5F8AF1E3DDDC40023E4B7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = BSD;
+				TargetAttributes = {
+					A1B5F8B61E3DDDC40023E4B7 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = J9F742HX62;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A1B5F8B21E3DDDC40023E4B7 /* Build configuration list for PBXProject "Mobile-FoodDelivery" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1B5F8AE1E3DDDC40023E4B7;
+			productRefGroup = A1B5F8B81E3DDDC40023E4B7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1B5F8B61E3DDDC40023E4B7 /* Mobile-FoodDelivery */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1B5F8B51E3DDDC40023E4B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1AE43711E880FAE0076B5D5 /* Basket.json in Resources */,
+				A1F3226F1E87EBAD00108CD0 /* Order.json in Resources */,
+				A17184951E99E6FB00B0F9CB /* restaurant.png in Resources */,
+				A171849D1E9A567F00B0F9CB /* checked_filled.png in Resources */,
+				A114B45D1E59D619001C3947 /* checked_2_filled.png in Resources */,
+				A114B44D1E58B960001C3947 /* Select.png in Resources */,
+				A17E89DC1E89161C002E5CA0 /* image-not-found.png in Resources */,
+				A171848F1E99E6FB00B0F9CB /* exterior.png in Resources */,
+				A17184941E99E6FB00B0F9CB /* restaurant_filled.png in Resources */,
+				A17184931E99E6FB00B0F9CB /* phone.png in Resources */,
+				A10775FD1E7D0AA9001A47DB /* circled_chevron_down_filled.png in Resources */,
+				A10775FE1E7D0AA9001A47DB /* circled_chevron_up_filled.png in Resources */,
+				A1375EDD1E54C4DA0011C529 /* location_filled.png in Resources */,
+				A17184901E99E6FB00B0F9CB /* motorcycle_filled.png in Resources */,
+				A171848E1E99E6FB00B0F9CB /* exterior_filled.png in Resources */,
+				A1F0BCB91E92234900A8C3DC /* user_filled.png in Resources */,
+				A18BD8431E9B6AF2000C5D59 /* more_filled.png in Resources */,
+				A17E89DE1E8916A6002E5CA0 /* image-not-found-wide.png in Resources */,
+				A1D6C55C1E9AA0B600CB73F4 /* multiply_filled.png in Resources */,
+				A114B45E1E59D619001C3947 /* unchecked_checkbox.png in Resources */,
+				A114B4531E58C10A001C3947 /* OCHAYA.jpg in Resources */,
+				A1B5F8C81E3DDDC40023E4B7 /* LaunchScreen.storyboard in Resources */,
+				A114B4621E5A01C3001C3947 /* plus.png in Resources */,
+				A114B4601E59F511001C3947 /* menu_filled.png in Resources */,
+				A17184911E99E6FB00B0F9CB /* motorcycle.png in Resources */,
+				A1B5F8C51E3DDDC40023E4B7 /* Assets.xcassets in Resources */,
+				A17184991E9A4BE800B0F9CB /* attention.png in Resources */,
+				A1375ED91E54C40E0011C529 /* menu.png in Resources */,
+				A114B44C1E58B960001C3947 /* Diselect.png in Resources */,
+				A1B5F8C01E3DDDC40023E4B7 /* Main.storyboard in Resources */,
+				A17184921E99E6FB00B0F9CB /* phone_filled.png in Resources */,
+				A1D6C55A1E9A980F00CB73F4 /* HeaderFooterCell.xib in Resources */,
+				A1375EDB1E54C4560011C529 /* ingredients_filled.png in Resources */,
+				A171849C1E9A567F00B0F9CB /* active_state_filled.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		445FCD8AC7C55AA988590776 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mobile-FoodDelivery/Pods-Mobile-FoodDelivery-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55F2F03816ED790A68915AF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		727AB56A235A2B65505E9D7E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mobile-FoodDelivery/Pods-Mobile-FoodDelivery-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1B5F8B31E3DDDC40023E4B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A18BD8411E9B648E000C5D59 /* HistoryDetailViewController.swift in Sources */,
+				A17184971E9A37AD00B0F9CB /* CurrentOrderStatusViewController.swift in Sources */,
+				A1D6C5581E9A8E7900CB73F4 /* HeaderFooterCell.swift in Sources */,
+				A18BD83D1E9B5D99000C5D59 /* HistoryOrderViewController.swift in Sources */,
+				A115ADB61E7E378500F76DC3 /* BasketViewController.swift in Sources */,
+				A11385921E87DF4700F64D74 /* TitleOrderTableViewCell.swift in Sources */,
+				A18BD83F1E9B63DD000C5D59 /* HistoryCell.swift in Sources */,
+				A114B45A1E59BDD8001C3947 /* MenuDetailViewController.swift in Sources */,
+				A18BD83B1E9B4DDB000C5D59 /* Customer.swift in Sources */,
+				A115ADBA1E7EEA8900F76DC3 /* OrderStatusViewController.swift in Sources */,
+				A11385931E87DF4700F64D74 /* SummaryOrderTableViewCell.swift in Sources */,
+				A1677F071E4EB5D900B0B778 /* Constants.swift in Sources */,
+				A1677F0B1E4EC47B00B0B778 /* MapPinViewController.swift in Sources */,
+				A1B5F8BD1E3DDDC40023E4B7 /* ViewController.swift in Sources */,
+				A114B4661E5A0E42001C3947 /* OptionTableViewCell.swift in Sources */,
+				A10776021E7D142E001A47DB /* BaseViewController.swift in Sources */,
+				A10776051E7D9A35001A47DB /* GlobalVariables.swift in Sources */,
+				A1EB19521E88116C00ECDB0D /* Merchant.swift in Sources */,
+				A115ADB81E7E3A6000F76DC3 /* ConfirmOrderViewController.swift in Sources */,
+				A114B4481E58AAE9001C3947 /* MerchantTableViewCell.swift in Sources */,
+				A1EB19551E88118F00ECDB0D /* Menu.swift in Sources */,
+				A1EB19571E881A9200ECDB0D /* BasketTableViewCell.swift in Sources */,
+				A10776001E7D136B001A47DB /* HamburgerViewController.swift in Sources */,
+				A1677F051E4EB53000B0B778 /* UICustomize.swift in Sources */,
+				A114B44F1E58B980001C3947 /* MenuTableViewCell.swift in Sources */,
+				A11385911E87DF4700F64D74 /* UIExpandableTableView.swift in Sources */,
+				A1B5F8BB1E3DDDC40023E4B7 /* AppDelegate.swift in Sources */,
+				A11385901E87DF4700F64D74 /* HeaderView.swift in Sources */,
+				A1B5F8C31E3DDDC40023E4B7 /* Mobile_FoodDelivery.xcdatamodeld in Sources */,
+				A1677F091E4EC22500B0B778 /* HomeViewController.swift in Sources */,
+				A114B4511E58BC22001C3947 /* MenuListViewController.swift in Sources */,
+				A114B4641E5A054E001C3947 /* MenuDetailTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A1B5F8BE1E3DDDC40023E4B7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1B5F8BF1E3DDDC40023E4B7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A1B5F8C61E3DDDC40023E4B7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1B5F8C71E3DDDC40023E4B7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A1B5F8CA1E3DDDC40023E4B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = NO;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A1B5F8CB1E3DDDC40023E4B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = NO;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1B5F8CD1E3DDDC40023E4B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E9488FE1C453AC33519060F /* Pods-Mobile-FoodDelivery.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_SUSPICIOUS_MOVES = NO;
+				DEVELOPMENT_TEAM = J9F742HX62;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos/Alamofire",
+					"$(PROJECT_DIR)/build/Release-iphoneos",
+				);
+				INFOPLIST_FILE = "Mobile-FoodDelivery/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ac.th.chula.bsd.Mobile-FoodDelivery";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A1B5F8CE1E3DDDC40023E4B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB401EB5306A1E73CD606765 /* Pods-Mobile-FoodDelivery.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_SUSPICIOUS_MOVES = NO;
+				DEVELOPMENT_TEAM = J9F742HX62;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Release-iphoneos/Alamofire",
+					"$(PROJECT_DIR)/build/Release-iphoneos",
+				);
+				INFOPLIST_FILE = "Mobile-FoodDelivery/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ac.th.chula.bsd.Mobile-FoodDelivery";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1B5F8B21E3DDDC40023E4B7 /* Build configuration list for PBXProject "Mobile-FoodDelivery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B5F8CA1E3DDDC40023E4B7 /* Debug */,
+				A1B5F8CB1E3DDDC40023E4B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1B5F8CC1E3DDDC40023E4B7 /* Build configuration list for PBXNativeTarget "Mobile-FoodDelivery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1B5F8CD1E3DDDC40023E4B7 /* Debug */,
+				A1B5F8CE1E3DDDC40023E4B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A1B5F8C11E3DDDC40023E4B7 /* Mobile_FoodDelivery.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A1B5F8C21E3DDDC40023E4B7 /* Mobile_FoodDelivery.xcdatamodel */,
+			);
+			currentVersion = A1B5F8C21E3DDDC40023E4B7 /* Mobile_FoodDelivery.xcdatamodel */;
+			path = Mobile_FoodDelivery.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A1B5F8AF1E3DDDC40023E4B7 /* Project object */;
+}

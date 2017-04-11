@@ -1,0 +1,47 @@
+{
+    "status": 200,
+    "message": "Get Menu successfully",
+    "data": [
+             {
+             "menuId" : 1,
+             "menuMerId" : 1,
+             "menuName" : "ชานม",
+             "menuPrice" : 40.00,
+             "menuStatus" : "",
+             "menuPicName" : "",
+             "opt_menuList" : [
+                         {"optionId" :1,
+                         "optionName": "ไข่มุก",
+                         "optionPrice": 10.00,
+                         "optionMenuId" : 1
+                         },
+                         {"optionId" :2,
+                         "optionName": "เยลลี่",
+                         "optionPrice": 10.00,
+                         "optionMenuId" : 1
+                         }
+                ]
+             },{
+             "menuId" : 2,
+             "menuMerId" : 1,
+             "menuName" : "ชานมโกโก้",
+             "menuPrice" : 40.00,
+             "menuStatus" : "",
+             "menuPicName" : ""
+             },{
+             "menuId" : 3,
+             "menuMerId" : 1,
+             "menuName" : "ชานมเผือก",
+             "menuPrice" : 40.00,
+             "menuStatus" : "",
+             "menuPicName" : ""
+             },{
+             "menuId" : 3,
+             "menuMerId" : 1,
+             "menuName" : "ชาเขียวบ๊วย",
+             "menuPrice" : 40.00,
+             "menuStatus" : "",
+             "menuPicName" : ""
+             }
+    ]
+}
