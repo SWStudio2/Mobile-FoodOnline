@@ -1,0 +1,41 @@
+{
+    "merchant" : [
+                  {
+                  "merid" : 1,
+                  "merName" : "ชา",
+                  "order":[
+                           {
+                           "menuid": 1,
+                           "menuName":"ชาเขียว",
+                           "menuAmount": 2,
+                           "menuPrice":100,
+                           "remark":""
+                           },{
+                           "menuid": 2,
+                           "menuName":"ชาเขียว",
+                           "menuAmount": 1,
+                           "menuPrice":100,
+                           "remark":""
+                           }
+                           ]
+                  },{
+                  "merid" : 2,
+                  "merName" : "hi",
+                  "order":[
+                           {
+                           "menuid": 3,
+                           "menuName":"ชาเขีียว",
+                           "menuAmount": 2,
+                           "menuPrice":100,
+                           "remark":""
+                           },{
+                           "menuid": 4,
+                           "menuName":"ชาเขียว",
+                           "menuAmount": 1,
+                           "menuPrice":100,
+                           "remark":""
+                           }
+                           ]
+                  }
+                  ]
+}

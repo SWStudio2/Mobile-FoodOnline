@@ -86,7 +86,7 @@ class HomeViewController: BaseViewController, GMSMapViewDelegate {
         
         let  value1  = NSDictionary()
         
-        Alamofire.request(BASETESTURL+GETALL_MER,method: .post, parameters: value1 as! Parameters, encoding: JSONEncoding.default, headers: header)
+        Alamofire.request(BASEURL+GETALL_MER,method: .post, parameters: value1 as! Parameters, encoding: JSONEncoding.default, headers: header)
             .responseJSON { response in
                 print("Response \(response)")
                // if let status = response.response?.statusCode {
@@ -99,16 +99,9 @@ class HomeViewController: BaseViewController, GMSMapViewDelegate {
                     
                     for mer in self.merList {
                         let merDict = mer as! NSDictionary
-                        let merObj = Merchant()
-                        merObj.merId = merDict.object(forKey: "merID") as! Int
-                        merObj.merName = merDict.object(forKey: "merName") as! String
-                        merObj.merAddress = merDict.object(forKey: "merAddress") as! String
-                        merObj.merLatitude = merDict.object(forKey: "merLatitude") as! String
-                        merObj.merLongtitude = merDict.object(forKey: "merLongtitude") as! String
-                        merObj.merContactNumber = merDict.object(forKey: "merContactNumber") as! String
-                        let lat = merDict.object(forKey: "merLatitude") as! String
-                        let long = merDict.object(forKey: "merLongtitude") as! String
-                        let loc =  CLLocation.init(latitude: CLLocationDegrees.init(lat)!, longitude: CLLocationDegrees.init(long)!)
+                        let merObj = Merchant(json: merDict)
+                        
+                        let loc =  CLLocation.init(latitude: CLLocationDegrees.init(merObj.merLatitude)!, longitude: CLLocationDegrees.init(merObj.merLongtitude)!)
                         if GlobalVariables.sharedManager.currentLocation != nil {
                             let distance = loc.distance(from: CLLocation.init(latitude: CLLocationDegrees.init((GlobalVariables.sharedManager.currentLocation?.latitude)!), longitude: (GlobalVariables.sharedManager.currentLocation?.longitude)!))
                             merObj.merDistance = String(format: "%.2f", distance / 1000)
@@ -196,24 +189,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "merchantTableViewCell", for: indexPath) as! MerchantTableViewCell
         let row = indexPath.row
-        /*print("merList row \(merList.object(at: row))")
-        print("mer row \((merList.object(at: row) as! NSDictionary).object(forKey: "merName"))")
-        let lat = (merList.object(at: row) as! NSDictionary).object(forKey: "merLatitude") as! String
-        let long = (merList.object(at: row) as! NSDictionary).object(forKey: "merLongtitude") as! String
-        let loc =  CLLocation.init(latitude: CLLocationDegrees.init(lat)!, longitude: CLLocationDegrees.init(long)!)
-        if GlobalVariables.sharedManager.currentLocation != nil {
-            let distance = loc.distance(from: CLLocation.init(latitude: CLLocationDegrees.init((GlobalVariables.sharedManager.currentLocation?.latitude)!), longitude: (GlobalVariables.sharedManager.currentLocation?.longitude)!))
-            print("\(distance)")
-            cell.merDistance.text = String(format: "%.2f", distance / 1000)
-           //print("\(loc. .distance(from: CLLocation.init(latitude: CLLocationDegrees.init((GlobalVariables.sharedManager.currentLocation?.latitude)!), longitude: (GlobalVariables.sharedManager.currentLocation?.longitude)!)). as String)")
-        }else{
-            let distance = loc.distance(from: CLLocation.init(latitude: CLLocationDegrees.init((GlobalVariables.sharedManager.selectedLocation?.latitude)!), longitude: (GlobalVariables.sharedManager.selectedLocation?.longitude)!))
-            print("selectedLocation \(distance)")
-            print("\(GlobalVariables.sharedManager.selectedLocation)")
-        }
-        cell.merName.text =  (merList.object(at: row) as! NSDictionary).object(forKey: "merName") as! String?//nameList[row]
-        
-        //cell.merDistance.text = "10"//distanceList[row]*/
+       
         var mer = self.merObjList[row]
         if self.searchBar.text != "" {
             mer = filtered[indexPath.row]
@@ -267,89 +243,40 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             mer = filtered[row]
         }
         
-        let URL = BASEURL+GETMENU+"\(mer.merId)"
+        let URL = BASEURL+GETMENU+"\(mer.merID)"
             
         Alamofire.request(URL)
         //Alamofire.request(URL,method: .get, parameters: [] as! Parameters, encoding: JSONEncoding.default, headers: header)
             
             .responseJSON { response in
                 print("Response \(response)")
-                // if let status = response.response?.statusCode {
-                //     switch(status){
-                //     case 200:
-                
-                if let result = response.result.value {
-                    do {
-                        if ((result as AnyObject).object(forKey: DATA_KEY) != nil) {
-                            let menuArr = (result as AnyObject).object(forKey: DATA_KEY)! as! NSArray
-                            var dict = NSDictionary()
+                if response.result.isSuccess {
+                    
+                    // if let status = response.response?.statusCode {
+                    //     switch(status){
+                    //     case 200:
+                    
+                    if let result = response.result.value {
+                        do {
+                            if ((result as AnyObject).object(forKey: DATA_KEY) != nil) {
+                                let menuArr = (result as AnyObject).object(forKey: DATA_KEY)! as! NSArray
+                                var dict = NSDictionary()
                             
-                            dict = ["mer": (mer),
+                                dict = ["mer": (mer),
                                     "menuList" : menuArr]
-                            self.performSegue(withIdentifier: "menuListSegue", sender: dict)
+                                self.performSegue(withIdentifier: "menuListSegue", sender: dict)
                         
+                            }
+                        } catch let error {
+                            print("error")
+                            self.alertPopupFail()
                         }
-                    } catch let error {
-                        print("error")
                     }
+                }else{
+                    self.alertPopupFail()
                 }
         }
 
-    }
-    func updateDistanceAndTime(mer:Merchant)  {
-        print("getDistance")
-        var lat = "13.739852"
-        var long = "100.530840"
-        var distance = "0.00"
-        var time = "0.00"
-        if GlobalVariables.sharedManager.selectedLocation != nil {
-            lat = "\(GlobalVariables.sharedManager.selectedLocation!.latitude)"
-            long =  "\(GlobalVariables.sharedManager.selectedLocation!.longitude)"
-        }else{
-            
-            lat = "\(GlobalVariables.sharedManager.currentLocation!.latitude)"
-            long =  "\(GlobalVariables.sharedManager.currentLocation!.longitude)"
-        }
-        let value1 = [ "oriLat" : lat,
-                       "oriLng" : long,
-                       "desLat" : mer.merLatitude,
-                       "desLng" : mer.merLongtitude]
-        print(value1)
-        print("merId \(mer.merId)")
-        Alamofire.request(BASEURL+DISTANCEMATRIX,method: .post, parameters: value1, encoding: JSONEncoding.default, headers: header)
-            .responseJSON { response in
-                print("reponse \(response)")
-                if let status = response.response?.statusCode {
-                    switch(status){
-                    case 200:
-                        
-                        print("getDistance example success")
-                        //to get JSON return value
-                        if let result = response.result.value {
-                            print(result)
-                            let JSON = result as! NSDictionary
-                            distance = (JSON.object(forKey: DATA_KEY) as! NSDictionary).value(forKey: "distance") as! String
-                            time = (JSON.object(forKey: DATA_KEY) as! NSDictionary).value(forKey: "duration") as! String
-                            mer.merDistance = distance
-                            mer.merDuration = time
-                            self.tmpMerObjList.append(mer)
-                            if self.tmpMerObjList.count == self.merObjList.count {
-                                
-                                self.merObjList = self.tmpMerObjList
-                                self.merObjList = self.merObjList.sorted { ($0 ).merDistance < ($1 ).merDistance }
-                                
-                                self.refreshControl.endRefreshing()
-                                self.merchantTbv.reloadData()
-                            }
-                            
-                        }
-                    default:
-                        print("error with response status: \(status)")
-                        
-                    }
-                }
-        }
-        
     }
 
     func updateDistanceAndTime(mer:Merchant, cell:MerchantTableViewCell, row:Int)  {
@@ -371,7 +298,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                        "desLat" : mer.merLatitude,
                        "desLng" : mer.merLongtitude]
         print(value1)
-        print("merId \(mer.merId)")
+        print("merId \(mer.merID)")
         Alamofire.request(BASETESTURL+DISTANCEMATRIX,method: .post, parameters: value1, encoding: JSONEncoding.default, headers: header)
             .responseJSON { response in
                 print("reponse \(response)")
@@ -388,9 +315,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                             time = (JSON.object(forKey: DATA_KEY) as! NSDictionary).value(forKey: "duration") as! String
                             mer.merDistance = distance
                             mer.merDuration = time
+                            print("mer.cookingTime \(mer.cookingTime)")
+                            print("time \(time)")
+                            let total = Double.init(mer.cookingTime) + Double.init(time)!
+                            let strTime = "\(total)"
+                            
+                            cell.merTime.text = strTime
+                            
                             
                             cell.merDistance.text = mer.merDistance
-                            cell.merTime.text = mer.merDuration
+                            
                            
                         }
                     default:
@@ -437,7 +371,18 @@ extension HomeViewController: CLLocationManagerDelegate {
                 
                
                     if let address = response?.firstResult() {
-                        self.addressLabel.text = "\(address.thoroughfare!) \(address.locality!) \(address.subLocality!)"
+                        var add = ""
+                        if address.thoroughfare != nil {
+                            add = address.thoroughfare!
+                        }
+                        if address.locality != nil {
+                            add = add + " " + address.locality!
+                        }
+                        if address.subLocality != nil {
+                            add = add + " " + address.subLocality!
+                        }
+                        GlobalVariables.sharedManager.selectedAddress = add
+                       self.addressLabel.text = GlobalVariables.sharedManager.selectedAddress// "\(address.thoroughfare!) \(address.locality!) \(address.subLocality!)"
                         // print("address.lines \(address.lines)")
                         //  let addessLine = address.lines! as [String]
                         //  self.addressLabel.text = addessLine.first

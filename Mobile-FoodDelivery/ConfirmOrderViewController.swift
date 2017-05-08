@@ -70,7 +70,11 @@ class ConfirmOrderViewController: BaseViewController, GMSMapViewDelegate , NVAct
         // Register to receive notification
         NotificationCenter.default.addObserver(self, selector: #selector(ConfirmOrderViewController.methodOfReceivedNotification), name: NSNotification.Name(rawValue: "getEstimatedTime"), object: nil)
     }
+    /*
     deinit {
+        NotificationCenter.default.removeObserver(self)
+    }*/
+    override func viewDidDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -172,6 +176,17 @@ class ConfirmOrderViewController: BaseViewController, GMSMapViewDelegate , NVAct
             geocoder.reverseGeocodeCoordinate(GlobalVariables.sharedManager.currentLocation!) { response , error in
                 if let address = response?.firstResult() {
                     GlobalVariables.sharedManager.selectedAddress = "\(address.thoroughfare!) \(address.locality!) \(address.subLocality!)"
+                    var add = ""
+                    if address.thoroughfare != nil {
+                        add = address.thoroughfare!
+                    }
+                    if address.locality != nil {
+                        add = add + " " + address.locality!
+                    }
+                    if address.subLocality != nil {
+                        add = add + " " + address.subLocality!
+                    }
+                    GlobalVariables.sharedManager.selectedAddress = add
                     self.addressTxt.text = GlobalVariables.sharedManager.selectedAddress
                     
                     
@@ -226,7 +241,9 @@ class ConfirmOrderViewController: BaseViewController, GMSMapViewDelegate , NVAct
                         "orderDistance":distance,
                         "orderEstimateTime" : estimatedTime,
                         "orderEstimateDateTime" : estimatedDateTime,
-                        "merchant":basArr.object(forKey: "merchant")] as [String : Any]
+                        "merchant":basArr.object(forKey: "merchant"),
+                        "orderPaymentType" : (self.isCash) ? "cash" : "credit"] as [String : Any]
+        
         let  value1:[String:Any]  = ["cusId" : cusId!,
                                      "allOrder" : allOrder]
         print("value11 \(value1)")
@@ -253,6 +270,7 @@ class ConfirmOrderViewController: BaseViewController, GMSMapViewDelegate , NVAct
                             if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OrderStatusViewController") as? OrderStatusViewController {
                                 if let navigator = self.navigationController {
                                     navigator.pushViewController(viewController, animated: true)
+                                    viewController.orderNo = "\(orderNo)"
                                     viewController.confirmOrder = "\(confirmCode)"
                                     let comps = NSDateComponents()
                                     

@@ -27,6 +27,7 @@ class BasketViewController: BaseViewController {
     var deliveryRate = 0.0
     var merList:[Int] = []
     var reqParaGetEstimateTime:[String:Any] = [:]
+    var isAbleToOrder = true
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addSlideMenuButton()
@@ -35,6 +36,7 @@ class BasketViewController: BaseViewController {
         // Do any additional setup after loading the view.
         // create data
         self.prepareBasketData()
+   //     self.checkCurrentOrder()
         let defaults = UserDefaults.standard
         deliveryRate = Double.init(defaults.object(forKey: DELIVERYRATE_KEY) as! String)!
     }
@@ -43,12 +45,51 @@ class BasketViewController: BaseViewController {
         self.calculatePrice()
     }
     
+    func checkCurrentOrder(){
+     
+        let defaults = UserDefaults.standard
+        let cusId = defaults.value(forKey: CUSID_KEY) as! String
+        let URL = BASEURL+CHECKCURRENT+"\(Int.init(cusId)!)"
+        
+        Alamofire.request(URL)
+            .responseJSON { response in
+                print("Response \(response)")
+                if response.result.isSuccess {
+                    
+                   if let result = response.result.value {
+                        do {
+                            if ((result as AnyObject).object(forKey: DATA_KEY) != nil) {
+                                let dataDict = (result as AnyObject).object(forKey: DATA_KEY)! as! NSDictionary
+                                let res = dataDict.value(forKey: "result") as! String
+                                if res == N_FLAG {
+                                   self.isAbleToOrder = true
+                                }
+                            }
+                        } catch let error {
+                            print("error")
+                            self.alertPopupFail()
+                        }
+                    }
+                }else{
+                    self.alertPopupFail()
+                }
+        }
+        
+    }
+    
+    func alertCannotOrder(msg:String){
+        let alert = UIAlertController(title: "แจ้งเตือน", message: msg , preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "ตกลง", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    
     func prepareBasketData(){
         // create data
         if  GlobalVariables.sharedManager.basket.object(forKey: "merchant") != nil {
             basArr = GlobalVariables.sharedManager.basket.object(forKey: "merchant")! as! NSArray
             print("Basket \(GlobalVariables.sharedManager.basket)")
-            tableView.reloadData()
+            
             /*self.orderBtn.isHidden = false
             self.summaryView.isHidden = false
             if GlobalVariables.sharedManager.numOfBasket == 0 {
@@ -56,9 +97,11 @@ class BasketViewController: BaseViewController {
                 self.summaryView.isHidden = true
             }*/
         }else{
+            basArr = []
            // self.orderBtn.isHidden = true
            // self.summaryView.isHidden = true
         }
+        tableView.reloadData()
     }
     
     func calculatePrice (){
@@ -82,32 +125,6 @@ class BasketViewController: BaseViewController {
         self.netPriceLbl.text = NSString(format: "%.2f", totalPrice + totalDeliverPrice) as String
         
     }
-/*
-    func getBasketList(){
-        if let path = Bundle.main.path(forResource: "Basket", ofType: "json")
-        {
-            if let jsonData = NSData (contentsOfFile: path)
-            {
-                do {
-                    if let jsonResult: NSMutableDictionary = try JSONSerialization.jsonObject(with: jsonData as Data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSMutableDictionary   {
-                        print("jsonResult \(jsonResult)")
-                        if (jsonResult.object(forKey: "merchant") != nil) {
-                            basArr = jsonResult.object(forKey: "merchant")! as! NSArray
-                            tableView.reloadData()
-                            
-                            
-                        }
-                    }
-                } catch let error {
-                    print("error")
-                }
-            }
-        }
-        
-    }
-*/
-    
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -115,6 +132,7 @@ class BasketViewController: BaseViewController {
     }
     
     @IBAction func clickedOrderMenu(_ sender : UIButton){
+        if isAbleToOrder && basArr.count > 0{
         
         
         self.merList.removeAll()
@@ -122,6 +140,7 @@ class BasketViewController: BaseViewController {
             print("mer \((mer as! NSDictionary).object(forKey: "merId")!)")
            merList.append((mer as! NSDictionary).object(forKey: "merId")! as! Int)
         }
+        
         var lat = "13.739852"
         var long = "100.530840"
         if GlobalVariables.sharedManager.selectedLocation != nil {
@@ -176,6 +195,12 @@ class BasketViewController: BaseViewController {
                 viewController.deliveryPrice = self.totalDeliverPrice
                 viewController.reqParaGetEstimateTime = self.reqParaGetEstimateTime
             }
+        }
+        }else if basArr.count == 0 {
+            self.alertCannotOrder(msg: "กรุณาสั่งรายการอาหาร")
+        }
+        else{
+            self.alertCannotOrder(msg: "ขออภัยค่ะ พบออร์เดอร์ที่ท่านสั่งในระบบ 1 รายการ ท่านไม่สามารถสั่งออร์เดอร์ได้ในขณะนี้")
         }
     }
     
@@ -375,9 +400,14 @@ extension BasketViewController:UITableViewDelegate, UITableViewDataSource {
             let section = sender.tag
             print("section \(section)")
             let merOrders = (self.basArr.object(at:section) as! NSDictionary)
+            print("Before Merchant Count \((GlobalVariables.sharedManager.basket.object(forKey: "merchant") as! NSMutableArray).count)")
             if (GlobalVariables.sharedManager.basket.object(forKey: "merchant") as! NSMutableArray).count == 1 {
                 GlobalVariables.sharedManager.basket = NSDictionary()
-                
+                self.prepareBasketData()
+                self.calculatePrice()
+                self.tableView.sectionOpen = NSNotFound
+                GlobalVariables.sharedManager.numOfBasket = 0
+                self.refreshBasketNumber()
             }else{
             for mer in GlobalVariables.sharedManager.basket.object(forKey: "merchant") as! NSMutableArray {
                 if merOrders.isEqual(to: mer as! [AnyHashable : Any]) {

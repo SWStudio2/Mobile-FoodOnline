@@ -40,10 +40,10 @@ class ViewController: UIViewController {
    
         let name = txtUsername.text!
         let pass =  txtPassword.text!
-        let  value1  = ["email" : name ,
-                        "password" : pass]
+        let  value1  = ["cusUserName" : name ,
+                        "cusPassword" : pass]
         
-       Alamofire.request(BASETESTURL+AUTH,method: .post, parameters: value1, encoding: JSONEncoding.default, headers: header)
+       Alamofire.request(BASEURL+AUTH,method: .post, parameters: value1, encoding: JSONEncoding.default, headers: header)
             .responseJSON { response in
                 print("Response \(response)")
                 
@@ -82,49 +82,14 @@ class ViewController: UIViewController {
         }
 
     }
-    
-    @IBAction func onLogin(){
-        print("onClick")
-        
-        
-        let name = txtUsername.text!
-        let pass =  txtPassword.text!
-        let  value1  = ["user" : name ,
-                        "password" : pass]
-        
-        
-        
-        Alamofire.request(BASEURL+AUTH,method: .post, parameters: value1, encoding: JSONEncoding.default, headers: header)
-            .responseJSON { response in
-                print("Response \(response)")
-                //self.performSegue(withIdentifier: LOGINSUCCESS_SEGUE, sender: nil)
-                
-                if let JSON = response.result.value {
-                    let json = (JSON as! NSMutableDictionary)
-                    if json.object(forKey: STATUS) as! NSNumber == 200 {
-                     /*   let cusId = (json.object(forKey: DATA_KEY) as! NSMutableDictionary).value(forKey: CUSID_KEY)
-                        let deliveryRate = (json.object(forKey: DATA_KEY) as! NSMutableDictionary).value(forKey: DELIVERYRATE_KEY)
-                        print(cusId)
-                        print(deliveryRate)
-                        let defaults = UserDefaults.standard
-                        defaults.set(cusId,forKey: CUSID_KEY)
-                        defaults.set(deliveryRate, forKey: CUSID_KEY)
-                    */   self.performSegue(withIdentifier: LOGINSUCCESS_SEGUE, sender: JSON)
-                        print("Success")
-                    }
-                    
-                }
-        }
-        
-    }
 
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == CONSTANTS.loginSuccessSegue{
-            print("prepare")
+    @IBAction func onRegis(){
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RegistationViewController") as? RegistationViewController {
+            if let navigator = navigationController {
+                navigator.pushViewController(viewController, animated: true)
+            }
         }
     }
-*/
     
 }
 

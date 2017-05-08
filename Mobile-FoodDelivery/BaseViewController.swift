@@ -202,6 +202,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
     
     func onBasketMenuMenuButtonPressed(_ sender : UIButton){
         print("Bastet")
+        
         if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BasketViewController") as? BasketViewController {
             if let navigator = navigationController {
                 navigator.pushViewController(viewController, animated: true)
@@ -243,5 +244,11 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
             label.text = ""
         }
         
+    }
+    
+    func alertPopupFail(){
+        let alert = UIAlertController(title: "แจ้งเตือน", message: "ขออภัยค่ะ ขณะนี้ระบบขัดข้อง กรุณาทดลองใหม่อีกครัง" , preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "ตกลง", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

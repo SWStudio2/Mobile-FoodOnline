@@ -78,6 +78,15 @@ class HamburgerViewController: UIViewController, UITableViewDataSource, UITableV
         })
     }
     
+    @IBAction func onNotiButtonPressed(_ sender : UIButton){
+        print("Noti")
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NotiViewController") as? NotiViewController {
+            if let navigator = navigationController {
+                navigator.pushViewController(viewController, animated: true)
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cellMenu")!
         

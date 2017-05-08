@@ -145,7 +145,7 @@ class MenuDetailViewController: BaseViewController, OptionDelegate {
         if GlobalVariables.sharedManager.basket.object(forKey: "merchant") != nil {
             for mer1 in GlobalVariables.sharedManager.basket.object(forKey: "merchant") as! NSArray {
                 let search = (mer1 as! NSDictionary).object(forKey: "merId") as! Int
-                let curMerId = mer.merId//self.mer.object(forKey: "merID") as! Int
+                let curMerId = mer.merID//self.mer.object(forKey: "merID") as! Int
                 print("\(search), \(curMerId)")
                 if search == curMerId {
                     print("equal")
@@ -188,8 +188,8 @@ class MenuDetailViewController: BaseViewController, OptionDelegate {
                        "desLat" : mer.merLatitude,
                        "desLng" : mer.merLongtitude]
         print(value1)
-        print("merId \(mer.merId)")
-        Alamofire.request(BASEURL+DISTANCEMATRIX,method: .post, parameters: value1, encoding: JSONEncoding.default, headers: header)
+        print("merId \(mer.merID)")
+        Alamofire.request(BASETESTURL+DISTANCEMATRIX,method: .post, parameters: value1, encoding: JSONEncoding.default, headers: header)
             .responseJSON { response in
                 print("reponse \(response)")
                 if let status = response.response?.statusCode {
@@ -203,7 +203,7 @@ class MenuDetailViewController: BaseViewController, OptionDelegate {
                             let JSON = result as! NSDictionary
                             distance = (JSON.object(forKey: DATA_KEY) as! NSDictionary).value(forKey: "distance") as! String
                             var arr = NSMutableArray()
-                            var basket :NSDictionary = [ "merId" : self.mer.merId,
+                            var basket :NSDictionary = [ "merId" : self.mer.merID,
                                                          "merLatitude" : self.mer.merLatitude,
                                                          "merLongitude" : self.mer.merLongtitude,
                                                          "merName" : self.mer.merName,
